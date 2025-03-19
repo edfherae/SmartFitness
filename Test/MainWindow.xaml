@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="504" Width="889">
+        Title="Smart-Fitness" Height="504" Width="889" Icon="/Fitness_icon.ico">
     <TabControl x:Name="MainTabControl" TabStripPlacement="Left">
         <TabItem x:Name="MainTabPage" Header="Главная" Margin="0,0,0,-28">
             <Grid Margin="0,10,0,0"/>
