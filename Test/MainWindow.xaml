@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
-        Title="Smart-Fitness" Height="504" Width="889" Icon="/Fitness_icon.ico">
-    <TabControl x:Name="MainTabControl" TabStripPlacement="Left">
-        <TabItem x:Name="MainTabPage" Header="Главная" Margin="0,0,0,-28">
+        Title="Smart-Fitness" Height="504" Width="889" Icon="/Fitness_icon.ico" Background="#FF1F1F1F" Foreground="White">
+    <TabControl x:Name="MainTabControl" TabStripPlacement="Left" Background="#FF1F1F1F" Foreground="White">
+        <TabItem x:Name="MainTabPage" Header="Главная" Margin="0,0,0,-28" Background="#FF1F1F1F" Foreground="#FF8D8D8D" OpacityMask="#FF2D2D2D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold" FontSize="14">
             <Grid Margin="0,10,0,0"/>
         </TabItem>
-        <TabItem x:Name="ScheduleTabPage" Header="Расписание" Margin="0,28,0,-57" BorderThickness="2,2,2,2">
+        <TabItem x:Name="ScheduleTabPage" Header="Расписание" Margin="0,28,0,-57" BorderThickness="2,2,2,2" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold" VerticalContentAlignment="Top">
             <Grid>
                 <Grid Margin="26,57,25,10" ShowGridLines="True" UseLayoutRounding="False" ClipToBounds="True">
                     <Grid.ColumnDefinitions>
@@ -31,43 +31,39 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="8" Grid.RowSpan="6"/>
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="8" Grid.RowSpan="6" Background="#FF3C3C3C"/>
                 </Grid>
-                <Label Content="(Месяц и год)" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="87"/>
-                <Button Content="след." HorizontalAlignment="Left" Margin="712,16,0,0" VerticalAlignment="Top" Width="57"/>
+                <Label Content="(Месяц и год)" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="110" Background="Transparent" Foreground="#FFABABAB" FontSize="14"/>
+                <Button Content="след." HorizontalAlignment="Right" Margin="0,12,25,448" Width="57" BorderBrush="#FF595959" Foreground="#FFDDDDDD" Background="#FF1F1F1F" FontSize="14" FontWeight="Bold" VerticalAlignment="Center"/>
             </Grid>
         </TabItem>
-        <TabItem x:Name="PersonelTabPage" Header="Персонал" Width="76" Margin="0,57,0,-85">
+        <TabItem x:Name="PersonelTabPage" Header="Персонал" Width="76" Margin="0,57,0,-85" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15*"/>
                     <RowDefinition Height="226*"/>
                 </Grid.RowDefinitions>
-                <Button Content="Добавить" HorizontalAlignment="Left" Margin="556,29,0,0" VerticalAlignment="Top" Height="31" Width="133" Grid.RowSpan="2"/>
-                <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="29,52,27,10" Grid.Row="1"/>
+                <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,22,112,0" VerticalAlignment="Top" Height="32" Width="133" Grid.RowSpan="2" BorderBrush="#FF595959" Background="#FF1F1F1F" Foreground="#FFDDDDDD" FontSize="14"/>
+                <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="29,52,27,10" Grid.Row="1" BorderBrush="Black" Foreground="#FF424242" Background="#FF3C3C3C"/>
+                <Button x:Name="DeletePersonelButton" Content="Удалить" HorizontalAlignment="Right" Margin="0,22,27,0" VerticalAlignment="Top" Height="32" Width="68" Background="#FF6C1B1B" Foreground="White" FontFamily="Berlin Sans FB" FontWeight="Bold" BorderBrush="#FF5B5B5B" Grid.RowSpan="2"/>
             </Grid>
         </TabItem>
-        <TabItem x:Name="ClientTabPage" Header="Клиенты" Width="76" Margin="0,85,0,-113">
+        <TabItem x:Name="ClientTabPage" Header="Клиенты" Width="76" Margin="0,85,0,-113" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
             <Grid>
-                <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="29,82,27,10"/>
-                <Button Content="Добавить" HorizontalAlignment="Left" Margin="556,29,0,0" VerticalAlignment="Top" Height="31" Width="133"/>
-                <TextBox HorizontalAlignment="Left" Margin="346,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="31"/>
-                <Label Content="ФИО:" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.95,0.102" Height="32" Width="43"/>
-                <TextBox HorizontalAlignment="Left" Margin="95,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" RenderTransformOrigin="0.534,1.004" Height="31"/>
-                <Label Content="Телефон:" HorizontalAlignment="Left" Margin="276,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.95,0.102" Height="28" Width="65"/>
+                <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="29,82,27,10" Background="#FF3C3C3C" BorderBrush="Black" Grid.Row="1"/>
+                <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,22,112,0" VerticalAlignment="Top" Height="32" Width="133" BorderBrush="#FF595959" Background="#FF1F1F1F" Foreground="#FFDDDDDD" FontSize="14"/>
+                <TextBox HorizontalAlignment="Right" Margin="0,22,273,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="32" Foreground="#FFDDDDDD" Background="#FF3C3C3C" BorderBrush="#FF595959" VerticalContentAlignment="Center" FontWeight="Normal" FontFamily="Sans Serif Collection" AcceptsReturn="True"/>
+                <Label Content="ФИО:" HorizontalAlignment="Right" Margin="0,22,685,0" VerticalAlignment="Top" RenderTransformOrigin="0.95,0.102" Height="32" Width="52" Foreground="#FFDDDDDD" FontSize="14" FontWeight="Normal" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <TextBox HorizontalAlignment="Right" Margin="0,22,522,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" RenderTransformOrigin="0.534,1.004" Height="32" Foreground="#FFDDDDDD" Background="#FF3C3C3C" BorderBrush="#FF595959" VerticalContentAlignment="Center" FontWeight="Normal" FontFamily="Sans Serif Collection" AcceptsReturn="True"/>
+                <Label Content="Телефон:" HorizontalAlignment="Right" Margin="0,24,434,0" VerticalAlignment="Top" RenderTransformOrigin="0.95,0.102" Height="28" Width="83" Foreground="#FFDDDDDD" FontSize="14" FontFamily="Bell MT" FontWeight="Normal" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Button x:Name="DeletePersonelButton_Copy" Content="Удалить" HorizontalAlignment="Right" Margin="0,22,27,0" VerticalAlignment="Top" Height="32" Width="68" Background="#FF6C1B1B" Foreground="White" FontFamily="Berlin Sans FB" FontWeight="Bold" BorderBrush="#FF5B5B5B"/>
             </Grid>
         </TabItem>
-        <TabItem x:Name="ServiceTabPage" Header="Услуги" Width="76" Margin="0,113,0,-142">
-            <Grid Background="White"/>
+        <TabItem x:Name="ServiceTabPage" Header="Услуги" Width="76" Margin="0,113,0,-142" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+            <Grid Background="#FF1F1F1F"/>
         </TabItem>
-        <TabItem x:Name="ConclusionsTabPage" Header="Отчёт" Width="76" Margin="0,142,0,-170">
-            <TabItem.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="#FFF0F0F0"/>
-                    <GradientStop Color="#FFFFFDFD" Offset="1"/>
-                </LinearGradientBrush>
-            </TabItem.Background>
-            <Grid Background="White"/>
+        <TabItem x:Name="ConclusionsTabPage" Header="Отчёт" Width="76" Margin="0,142,0,-170" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+            <Grid Background="#FF1F1F1F"/>
         </TabItem>
     </TabControl>
 </Window>
