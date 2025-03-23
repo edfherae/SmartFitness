@@ -56,9 +56,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CalendarDay.xaml.cs">
+      <DependentUpon>CalendarDay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SmartFitnessLogin.xaml.cs">
       <DependentUpon>SmartFitnessLogin.xaml</DependentUpon>
     </Compile>
+    <Page Include="CalendarDay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
