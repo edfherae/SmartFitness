@@ -11,19 +11,15 @@ using SmartFitness.Models;
 
 namespace SmartFitness
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
 		int year, month;
 		private string connectionString;
-		SqlConnection connection;
 		public ObservableCollection<Service> Services { get; set; }  
 		public ObservableCollection<Client> Clients { get; set; } = new ObservableCollection<Client>();
 		private Service _selectedService;
 		private DbSmartFitness1Context DbContext { get; } = new DbSmartFitness1Context();
-		private Client temp_client; //такого быть не должно
+		private Client temp_client; //такого быть не должно, по-хорошему, привязать бы как-то к табу
 
 		public MainWindow()
 		{
@@ -38,7 +34,7 @@ namespace SmartFitness
 			gvPersonal.Columns.Add(new GridViewColumn() { Header = "Телефон", Width = 140, DisplayMemberBinding = new Binding("Phone") });
 			this.listViewPersonal.ItemsSource = DbContext.Trainers.ToList();
 
-			//listBoxClientInfo.Items.Add(new SmartFitness.Models.Client() { FirstName = "1", LastName = "2"});
+	 		//listBoxClientInfo.Items.Add(new SmartFitness.Models.Client() { FirstName = "1", LastName = "2"});
 			//listBoxClientInfo.Items.Add(new SmartFitness.Models.Client() { FirstName = "3", LastName = "4"});
 
 			listViewClients.ItemsSource = DbContext.Clients.ToList();

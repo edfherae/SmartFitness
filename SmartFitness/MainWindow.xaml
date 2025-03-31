@@ -73,7 +73,7 @@
 				</Grid>
 			</Grid>
 		</TabItem>
-		<TabItem x:Name="PersonelTabPage" Header="Персонал" Width="76" Margin="0,57,0,-85" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+		<TabItem x:Name="PersonelTabPage" Header="Персонал" Margin="0,57,4,-85" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="15*"/>
@@ -90,14 +90,14 @@
 				</ListView>
 			</Grid>
 		</TabItem>
-		<TabItem x:Name="ClientTabPage" Header="Клиенты" Width="76" Margin="0,85,0,-113" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+		<TabItem x:Name="ClientTabPage" Header="Клиенты" Margin="0,85,4,-113" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
 			<Grid>
 				<Button Content="Добавить" HorizontalAlignment="Right" Margin="0,22,112,0" VerticalAlignment="Top" Height="32" Width="133" BorderBrush="#FF595959" Background="#FF1F1F1F" Foreground="#FFDDDDDD" FontSize="14"/>
 				<TextBox HorizontalAlignment="Right" Margin="0,22,273,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="32" Foreground="White" Background="#FF333333" BorderBrush="#FF333333" VerticalContentAlignment="Center" FontWeight="Normal" FontFamily="Sans Serif Collection" AcceptsReturn="True"/>
 				<Label Content="ФИО:" HorizontalAlignment="Right" Margin="0,22,685,0" VerticalAlignment="Top" RenderTransformOrigin="0.95,0.102" Height="32" Width="52" Foreground="#FFDDDDDD" FontSize="14" FontWeight="Normal" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 				<TextBox HorizontalAlignment="Right" Margin="0,22,522,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" RenderTransformOrigin="0.534,1.004" Height="32" Foreground="White" Background="#FF333333" VerticalContentAlignment="Center" FontWeight="Normal" FontFamily="Sans Serif Collection" AcceptsReturn="True" BorderBrush="#FF333333"/>
 				<Label Content="Телефон:" HorizontalAlignment="Right" Margin="0,24,434,0" VerticalAlignment="Top" RenderTransformOrigin="0.95,0.102" Height="28" Width="83" Foreground="#FFDDDDDD" FontSize="14" FontFamily="Bell MT" FontWeight="Normal" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-				<Button x:Name="DeletePersonelButton_Copy" Content="Удалить" HorizontalAlignment="Right" Margin="0,22,27,0" VerticalAlignment="Top" Height="32" Width="68" Background="#FF6C1B1B" Foreground="White" FontFamily="Berlin Sans FB" FontWeight="Bold" BorderBrush="#FF5B5B5B"/>
+				<Button x:Name="DeletePersonalButton" Content="Удалить" HorizontalAlignment="Right" Margin="0,22,27,0" VerticalAlignment="Top" Height="32" Width="68" Background="#FF6C1B1B" Foreground="White" FontFamily="Berlin Sans FB" FontWeight="Bold" BorderBrush="#FF5B5B5B"/>
 				<ListView x:Name="listViewClients" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,75,522,0" FontSize="14" FontWeight="Normal" VerticalAlignment="Top" Height="415" SelectionChanged="listViewClients_SelectionChanged">
 					<ListView.View>
 						<GridView>
@@ -106,7 +106,7 @@
 						</GridView>
 					</ListView.View>
 				</ListView>
-				<Grid x:Name="gridClientInfo" Margin="323,75,0,0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" DataContextChanged="gridClientInfo_DataContextChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Height="280" Width="448">
+				<Grid x:Name="gridClientInfo" Margin="323,75,0,0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" DataContextChanged="gridClientInfo_DataContextChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Height="287" Width="448">
 					<Label Content="Информация о клиенте" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Margin="0,8,0,0"/>
 					<Label Content="ID:" HorizontalAlignment="Left" Margin="11,36,0,0" VerticalAlignment="Top" FontWeight="Normal" FontSize="14" Foreground="#FF042271" FontFamily="Arial"/>
 					<Label Content="Имя:" HorizontalAlignment="Left" Margin="9,66,0,0" VerticalAlignment="Top" FontWeight="Normal" FontSize="14" Foreground="#FF042271" FontFamily="Arial"/>
@@ -125,18 +125,18 @@
 					<TextBox x:Name="textBoxRegDate" HorizontalAlignment="Left" Margin="116,221,0,0" Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="164" FontWeight="Normal" FontFamily="Arial" FontSize="14" Foreground="#FF042271"/>
 					<TextBox x:Name="textBoxGroup" HorizontalAlignment="Left" Margin="116,253,0,0" Text="{Binding Group, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="164" FontWeight="Normal" FontFamily="Arial" FontSize="14" Foreground="#FF042271"/>
 					<Label Content="Фото" HorizontalAlignment="Left" Margin="344,36,0,0" VerticalAlignment="Top" FontWeight="Normal" FontSize="14" Foreground="#FF042271" FontFamily="Arial" RenderTransformOrigin="0.597,1.419"/>
-					<Rectangle HorizontalAlignment="Left" Height="200" Margin="298,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="135"/>
+					<Rectangle HorizontalAlignment="Left" Height="200" Margin="299,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="135"/>
 				</Grid>
 				<Button x:Name="ButtonSaveClient" Content="Сохранить" HorizontalAlignment="Right" Margin="0,376,27,0" VerticalAlignment="Top" Height="32" Width="133" BorderBrush="#FF595959" Background="#FF055F1B" Foreground="#FFDDDDDD" FontSize="14" IsEnabled="{Binding HasChanged, UpdateSourceTrigger=PropertyChanged}"/>
 			</Grid>
 		</TabItem>
-		<TabItem x:Name="ServiceTabPage" Header="Услуги" Width="76" Margin="0,113,0,-142" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+		<TabItem x:Name="ServiceTabPage" Header="Услуги" Margin="0,113,4,-142" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
 			<Grid Background="#FF1F1F1F">
 				<DataGrid x:Name="ServicesDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="29,82,27,10" Background="#FF3C3C3C" BorderBrush="Black" FontFamily="Bahnschrift" FontWeight="Normal" FontSize="20" SelectionChanged="ServicesDataGrid_SelectionChanged"/>
 				<Button x:Name="PurchaseService" Content="Купить" HorizontalAlignment="Right" Margin="0,21,27,0" VerticalAlignment="Top" Height="32" Width="133" BorderBrush="#FF595959" Background="#FF1F1F1F" Foreground="#FFDDDDDD" FontSize="14" Click="PurchaseServiceButton_Click"/>
 			</Grid>
 		</TabItem>
-		<TabItem x:Name="ConclusionsTabPage" Header="Отчёт" Width="76" Margin="0,142,0,-170" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+		<TabItem x:Name="ConclusionsTabPage" Header="Отчёт" Margin="0,142,4,-170" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
 			<Grid Background="#FF1F1F1F"/>
 		</TabItem>
 	</TabControl>
