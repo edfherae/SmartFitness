@@ -8,8 +8,29 @@
         Title="Smart-Fitness" Height="522" Width="889" Icon="/Fitness_icon.ico" Background="#FF1F1F1F" Foreground="White">
 	<TabControl x:Name="MainTabControl" TabStripPlacement="Left" Background="#FF1F1F1F" Foreground="White">
 		<TabItem x:Name="MainTabPage" Header="Главная" Margin="0,0,0,-28" Background="#FF1F1F1F" Foreground="Gray" OpacityMask="#FF2D2D2D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold" FontSize="14">
-			<Grid Margin="0,10,0,0"/>
-		</TabItem>
+            <Grid Margin="0,10,0,0">
+                <Image x:Name="login" HorizontalAlignment="Left" Height="123" Margin="15,10,0,0" VerticalAlignment="Top" Width="118" Source="/iш.webp"/>
+                <Label Content="Имя" HorizontalAlignment="Left" Margin="138,10,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="103"/>
+                <Label Content="Фамилия" HorizontalAlignment="Left" Margin="138,42,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="103"/>
+                <Label Content="email" HorizontalAlignment="Left" Margin="138,74,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="103" Cursor=""/>
+                <TextBox x:Name="TextBoxLastName" Margin="246,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="27" HorizontalAlignment="Left" Background="White" Foreground="Black" SelectionTextBrush="White" BorderBrush="Black" IsEnabled="False"/>
+                <TextBox x:Name="TextBoxFirstName" Margin="246,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="27" HorizontalAlignment="Left" Background="White" Foreground="Black" SelectionTextBrush="White" BorderBrush="Black" IsEnabled="False"/>
+                <TextBox x:Name="TextBoxEmail" Margin="246,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="27" HorizontalAlignment="Left" Background="White" Foreground="Black" SelectionTextBrush="White" BorderBrush="Black" IsEnabled="False"/>
+                <Label x:Name="Log_in" Content="Log in" HorizontalAlignment="Left" Margin="15,133,0,0" VerticalAlignment="Top" Width="59" Foreground="#FFECF909" Background="{x:Null}" FontStyle="Italic" MouseDoubleClick="Log_in_MouseDoubleClick"  />
+                <Label x:Name="No_Log_in" Content="вы еще не авторизованы" HorizontalAlignment="Left" Margin="74,136,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.196,0.449" FontWeight="Bold" FontSize="10" />
+                <GridSplitter HorizontalAlignment="Left" Height="27" Margin="70,133,0,0" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5">
+                    <GridSplitter.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </GridSplitter.RenderTransform>
+                </GridSplitter>
+            </Grid>
+
+        </TabItem>
 		<TabItem x:Name="ScheduleTabPage" Header="Расписание" Margin="0,28,0,-57" BorderThickness="2,2,2,2" Background="#FF1F1F1F" Foreground="#FF8D8D8D" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold" VerticalContentAlignment="Top">
 			<Grid Height="503">
 				<Grid x:Name="ScheduleGrid"

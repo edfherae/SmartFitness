@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Fitness_icon.ico" />
+    <None Remove="i.webp" />
+    <None Remove="iш.webp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +31,8 @@
 
   <ItemGroup>
     <Resource Include="Fitness_icon.ico" />
+    <Resource Include="i.webp" />
+    <Resource Include="iш.webp" />
   </ItemGroup>
 
 </Project>
