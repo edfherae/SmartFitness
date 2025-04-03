@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.IdentityModel.Tokens;
 using SmartFitness.Models;
 
 namespace SmartFitness
@@ -270,9 +271,10 @@ namespace SmartFitness
 			if (listViewClients.SelectedIndex != -1) 
 			{ 
 				temp_client = new((Client)listViewClients.SelectedItem);
-				temp_client.HasChanged = false;
+				//temp_client.HasChanged = false;
 				gridClientInfo.DataContext = temp_client; 
-				ButtonSaveClient.IsEnabled = false;
+				ButtonSaveClient.IsEnabled = true;
+				DeleteClientButton.IsEnabled = true;
 			}
 		}
 
@@ -281,6 +283,66 @@ namespace SmartFitness
 			//отследить изменение копии, после врубить кнопку сохранения
 		}
 
+		private void Log_in_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+
+		}
+		private bool IsNullClientInfoFields()
+		{
+			if (textBoxFirstName.Text.IsNullOrEmpty() ||
+				textBoxLastName.Text.IsNullOrEmpty() ||
+				textBoxEmail.Text.IsNullOrEmpty() ||
+				textBoxPhoneNumber.Text.IsNullOrEmpty() ||
+				textBoxBirthDate.Text.IsNullOrEmpty() ||
+				textBoxRegDate.Text.IsNullOrEmpty() ||
+				textBoxGroup.Text.IsNullOrEmpty()) return true;
+			else return false;
+		}
+		private void ButtonSaveClient_Click(object sender, RoutedEventArgs e)
+		{
+			if(IsNullClientInfoFields())
+			{
+				MessageBox.Show("Заполните все поля!", "Внимание", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation); 
+				return;
+			}
+			Client client = DbContext.Clients.Find(temp_client.ClientId);
+			if(client != null)
+			{
+				client.firstName = temp_client.FirstName;
+				client.lastName = temp_client.LastName;
+				client.email = temp_client.Email;
+				client.phone = temp_client.Phone;
+				client.birthDate = temp_client.BirthDate;
+				client.startDate = temp_client.StartDate;
+				client.group = temp_client.Group;
+			}
+			else DbContext.Clients.Add(temp_client);
+
+			temp_client = null;
+			gridClientInfo.DataContext = temp_client;
+			DbContext.SaveChanges();
+			ReloadListViewClients();
+		}
+		private void ReloadListViewClients()
+		{
+			listViewClients.ItemsSource = null;
+			listViewClients.ItemsSource = DbContext.Clients.ToList();
+		}
+		private void addClientButton_Click(object sender, RoutedEventArgs e)
+		{
+			temp_client = new();
+			gridClientInfo.DataContext = temp_client;
+			TextBox tb = FindName("textBoxFirstName") as TextBox;
+			tb.Focus();
+			ButtonSaveClient.IsEnabled = true;
+		}
+
+		private void DeletePersonalButton_Click(object sender, RoutedEventArgs e)
+		{
+			DbContext.Clients.Remove(DbContext.Clients.ToList()[listViewClients.SelectedIndex]);
+			DbContext.SaveChanges();
+			ReloadListViewClients();
+		}
 		private void LoadCalendar(int month, int year)
 		{
 			ScheduleGrid.Children.Clear();
