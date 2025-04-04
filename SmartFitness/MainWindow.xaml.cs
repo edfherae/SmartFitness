@@ -240,7 +240,6 @@ namespace SmartFitness
 			
 			return null;
 		}
-
 		private void ServicesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			// Получаем выбранную услугу из DataGrid
@@ -279,6 +278,12 @@ namespace SmartFitness
 		private void gridClientInfo_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
 		{
 			//отследить изменение копии, после врубить кнопку сохранения
+		}
+
+		private void Log_in_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			SmartFitnessLogin smart = new SmartFitnessLogin();
+			smart.Show();
 		}
 
 		private void LoadCalendar(int month, int year)

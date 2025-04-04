@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartFitness"
         mc:Ignorable="d"
-        Title="Smart Fitness" Height="450" Width="650" WindowStartupLocation="CenterScreen" Background="#1e1e1e">
-    <Grid>
+        ResizeMode="CanMinimize"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display"
+        Title="Smart-Fitness" Height="480" Width="665" WindowStartupLocation="CenterScreen" Background="#1e1e1e">
+    <Grid Margin="0,0,0,-5">
         <!-- Фоновое изображение -->
         <Grid.Background>
-            <ImageBrush ImageSource="Images\background.png" Stretch="UniformToFill" Opacity="0.3" />
+            <ImageBrush ImageSource="/background2.png" Stretch="UniformToFill" Opacity="0.3" />
         </Grid.Background>
 
         <!-- Логотип -->
@@ -19,14 +23,14 @@
         <!-- Логин -->
         <TextBlock Text="ЛОГИН" Foreground="White" FontSize="14" Margin="220,125,376,291" FontFamily="Comic Sans MS" RenderTransformOrigin="0.093,-0.002"/>
 
-        <TextBox x:Name="Password" Width="210" Margin="0,207,0,203" HorizontalAlignment="Center" Background="#333" Foreground="White" BorderThickness="0" Padding="10" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="Login" Width="210" Margin="0,146,0,264" HorizontalAlignment="Center" Background="#333" Foreground="White" BorderThickness="0" Padding="10" FontFamily="Comic Sans MS"/>
 
         <!-- Пароль -->
         <TextBlock Text="ПАРОЛЬ" Foreground="White" FontSize="14" Margin="220,185,368,227" FontFamily="Comic Sans MS"/>
-        <PasswordBox x:Name="Login" Width="210" Margin="0,149,0,261" HorizontalAlignment="Center" Background="#333" Foreground="White" BorderThickness="0" Padding="10" FontFamily="Comic Sans MS"/>
+        <PasswordBox x:Name="Password" Width="210" Margin="0,211,0,199" HorizontalAlignment="Center" Background="#333" Foreground="White" BorderThickness="0" Padding="10" FontFamily="Comic Sans MS" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
 
         <Button Content="ВОЙТИ" FontSize="18"
-        Background="#333" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="220,271,220,115" FontFamily="Comic Sans MS">
+        Background="#333" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="220,271,220,115" FontFamily="Comic Sans MS" Click="Button_Click">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Template">

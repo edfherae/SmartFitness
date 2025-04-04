@@ -23,5 +23,16 @@ namespace SmartFitness
         {
             InitializeComponent();
         }
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+            if (Login.Text == "admin")
+            {
+                //MainWindow mainWindow = new MainWindow();
+                //mainWindow.TextBoxLastName.Text = "dsada";
+
+				this.Close();
+            }
+        }
     }
 }

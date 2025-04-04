@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="background2.png" />
     <None Remove="Fitness_icon.ico" />
     <None Remove="i.webp" />
     <None Remove="iш.webp" />
@@ -30,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="background2.png" />
     <Resource Include="Fitness_icon.ico" />
     <Resource Include="i.webp" />
     <Resource Include="iш.webp" />
