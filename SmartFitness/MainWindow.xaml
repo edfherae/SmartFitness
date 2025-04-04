@@ -66,6 +66,18 @@
 						</TransformGroup>
 					</GridSplitter.RenderTransform>
 				</GridSplitter>
+				<DataGrid x:Name="ServicesDataGrid_Copy" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="499,172,10,10" Background="#FF3C3C3C" BorderBrush="Black" FontFamily="Bahnschrift" FontWeight="Normal" FontSize="20" SelectionChanged="ServicesDataGrid_SelectionChanged"/>
+				<Label Content="Приобретенные услуги" HorizontalAlignment="Left" Margin="499,136,0,0" VerticalAlignment="Top" Foreground="White" Width="170" Cursor=""/>
+				<StackPanel Margin="15,172,402,10" OpacityMask="Black" Background="#FF2F2F2F">
+					<TextBlock TextWrapping="Wrap" Height="21" Foreground="White" HorizontalAlignment="Center" Width="101"><Run Language="ru-ru" Text="Время работы "/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Пн. "/><Run Text="9:00 - 23:00"/><LineBreak/><Run/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Вт. "/><Run Text="9:00 - 23:00"/><LineBreak/><Run/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Ср. "/><Run Text="9:00 - 23:00"/><LineBreak/><Run/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Чт. "/><Run Text="9:00 - 23:00"/><LineBreak/><Run/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Пт. "/><Run Text="9:00 - 23:00"/><LineBreak/><Run/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Сб. "/><Run Text="9:00 - 21:00"/><LineBreak/><Run/></TextBlock>
+					<TextBlock TextWrapping="Wrap" Height="26" Foreground="White" Width="356"><Run Language="ru-ru" Text="Вс. "/><Run Text="9:00 - 21:00"/><LineBreak/><Run/></TextBlock>
+				</StackPanel>
 			</Grid>
 
 		</TabItem>
@@ -239,14 +251,58 @@
 				<Button x:Name="PurchaseService" Content="Купить" HorizontalAlignment="Right" Margin="0,21,27,0" VerticalAlignment="Top" Height="32" Width="133" BorderBrush="#FF595959" Background="#FF1F1F1F" Foreground="#FFDDDDDD" FontSize="14" Click="PurchaseServiceButton_Click"/>
 			</Grid>
 		</TabItem>
-		<TabItem x:Name="ConclusionsTabPage" Header="" Margin="-2,142,-1,-170" Foreground="#FF363636" BorderBrush="#FF393939" FontFamily="Berlin Sans FB" FontWeight="Bold">
+		<TabItem x:Name="ConclusionsTabPage" Header="" Margin="0,142,4,-170" 
+         Foreground="#FF8D8D8D" BorderBrush="#FF393939" 
+         FontFamily="Berlin Sans FB" FontWeight="Bold">
 			<TabItem.Background>
 				<ImageBrush ImageSource="/ReportIcon.png"/>
 			</TabItem.Background>
-			<TabItem.ToolTip>
-				<ToolTip>Отчёт</ToolTip>
-			</TabItem.ToolTip>
-			<Grid/>
+			<Grid Background="#FF1F1F1F">
+				<ScrollViewer VerticalScrollBarVisibility="Auto">
+					<StackPanel Margin="20">
+						<!-- Заголовок -->
+						<TextBlock Text="Отчёт о проекте" 
+                           Foreground="#FFDCDC00" FontSize="24" FontWeight="Bold"
+                           Margin="0 0 0 20"/>
+
+						<!-- Участники -->
+						<TextBlock Text="Участники проекта:" 
+                           Foreground="#FF00B4D8" FontSize="18"
+                           Margin="0 10 0 5"/>
+
+						<!-- Простой список через StackPanel -->
+						<StackPanel Margin="10 5">
+							<TextBlock Text="1. Егоров Евгений Александрович (Мастер)" Foreground="White"/>
+							<TextBlock Text="2. Назарец Ксения Владимировна (Дизайнер)" Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="3. Журавлева Наталья Алексеевна (БД)" Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="4. Агашков Лев Олегович (Разработчик)" Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="5. Дерипаско Маргарита Николаевна (Разработчик)" Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="6. Чумаченко Павел Евгеньевич (Разработчик)" Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="7. Васильев Игорь Николаевич (Тестировщик)" Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="8. Соколов Сергей Александрович (Тестировщик)" Foreground="White" Margin="0 5 0 0"/>
+						</StackPanel>
+
+						<!-- Результаты -->
+						<TextBlock Text="Достигнутые результаты:" 
+                           Foreground="#FF00B4D8" FontSize="18"
+                           Margin="0 20 0 5"/>
+
+						<StackPanel Margin="15 5">
+							<TextBlock Text="• Рабочая База Данный и работа с ней через приложение" 
+                               Foreground="White" TextWrapping="Wrap"/>
+							<TextBlock Text="• Красивый дизай и удобство в работе" 
+                               Foreground="White" Margin="0 5 0 0"/>
+							<TextBlock Text="• Оптимизация производительности на 40%" 
+                               Foreground="White" Margin="0 5 0 0"/>
+						</StackPanel>
+
+						<!-- Подпись -->
+						<TextBlock Text="Преподаватель: Картузов Александр." 
+                           Foreground="#FFAAAAAA" FontStyle="Italic"
+                           Margin="0 20 0 0" HorizontalAlignment="Right"/>
+					</StackPanel>
+				</ScrollViewer>
+			</Grid>
 		</TabItem>
 	</TabControl>
 </Window>

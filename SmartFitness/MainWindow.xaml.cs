@@ -284,10 +284,6 @@ namespace SmartFitness
 			//отследить изменение копии, после врубить кнопку сохранения
 		}
 
-		private void Log_in_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-		{
-
-		}
 		private bool IsNullClientInfoFields()
 		{
 			if (textBoxFirstName.Text.IsNullOrEmpty() ||
@@ -338,6 +334,11 @@ namespace SmartFitness
 			TextBox tb = FindName("textBoxFirstName") as TextBox;
 			tb.Focus();
 			ButtonSaveClient.IsEnabled = true;
+		}
+		private void Log_in_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			SmartFitnessLogin smart = new SmartFitnessLogin();
+			smart.Show();
 		}
 
 		private void DeleteClientButton_Click(object sender, RoutedEventArgs e)
