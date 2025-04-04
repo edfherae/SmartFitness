@@ -188,11 +188,11 @@
                         <!-- Простой список через StackPanel -->
                         <StackPanel Margin="10 5">
                             <TextBlock Text="1. Егоров Евгений Александрович (Мастер)" Foreground="White"/>
-                            <TextBlock Text="2. Назарец Ксения Владимировна ()" Foreground="White" Margin="0 5 0 0"/>
+                            <TextBlock Text="2. Назарец Ксения Владимировна (Дизайнер)" Foreground="White" Margin="0 5 0 0"/>
                             <TextBlock Text="3. Журавлева Наталья Алексеевна (БД)" Foreground="White" Margin="0 5 0 0"/>
-                            <TextBlock Text="4. Агашков Лев Олегович ()" Foreground="White" Margin="0 5 0 0"/>
-                            <TextBlock Text="5. Дерипаско Маргарита Николаевна ()" Foreground="White" Margin="0 5 0 0"/>
-                            <TextBlock Text="6. Чумаченко Павел Евгеньевич ()" Foreground="White" Margin="0 5 0 0"/>
+                            <TextBlock Text="4. Агашков Лев Олегович (Разработчик)" Foreground="White" Margin="0 5 0 0"/>
+                            <TextBlock Text="5. Дерипаско Маргарита Николаевна (Разработчик)" Foreground="White" Margin="0 5 0 0"/>
+                            <TextBlock Text="6. Чумаченко Павел Евгеньевич (Разработчик)" Foreground="White" Margin="0 5 0 0"/>
                             <TextBlock Text="7. Васильев Игорь Николаевич (Тестировщик)" Foreground="White" Margin="0 5 0 0"/>
                             <TextBlock Text="8. Соколов Сергей Александрович (Тестировщик)" Foreground="White" Margin="0 5 0 0"/>
                         </StackPanel>
