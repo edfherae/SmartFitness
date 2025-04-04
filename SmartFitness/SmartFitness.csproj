@@ -21,6 +21,7 @@
     <None Remove="ReportIcon.png" />
     <None Remove="ScheduleIcon.png" />
     <None Remove="ServicesIcon.png" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -44,7 +45,7 @@
     <Resource Include="background.png" />
     <Resource Include="ClientsIcon.png" />
     <Resource Include="Fitness_icon.ico" />
-    <Resource Include="iш.webp" />
+    <Resource Include="user_image.webp" />
     <Resource Include="MainPageIcon.png" />
     <Resource Include="PersonelIcon.png" />
     <Resource Include="ReportIcon.png" />
