@@ -326,6 +326,8 @@ namespace SmartFitness
 		}
 		private void ReloadListViewClients()
 		{
+			temp_client = null;
+			gridClientInfo.DataContext = null;
 			listViewClients.ItemsSource = null;
 			listViewClients.ItemsSource = DbContext.Clients.ToList();
 		}
@@ -338,12 +340,17 @@ namespace SmartFitness
 			ButtonSaveClient.IsEnabled = true;
 		}
 
-		private void DeletePersonalButton_Click(object sender, RoutedEventArgs e)
+		private void DeleteClientButton_Click(object sender, RoutedEventArgs e)
 		{
-			DbContext.Clients.Remove(DbContext.Clients.ToList()[listViewClients.SelectedIndex]);
-			DbContext.SaveChanges();
-			ReloadListViewClients();
+			if(listViewClients.SelectedIndex == -1) MessageBox.Show("Выберите клиента из списка!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Hand);
+			else
+			{
+				DbContext.Clients.Remove(DbContext.Clients.ToList()[listViewClients.SelectedIndex]);
+				DbContext.SaveChanges();
+				ReloadListViewClients();
+			}
 		}
+
 		private void LoadCalendar(int month, int year)
 		{
 			ScheduleGrid.Children.Clear();
