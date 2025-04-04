@@ -49,7 +49,7 @@
 
 				</Grid>
 				<Label x:Name="MonthYearLabel" Content="Месяц, год" HorizontalAlignment="Left" Margin="22,17,0,0" VerticalAlignment="Top" Width="160" Background="Transparent" Foreground="#FFABABAB" FontSize="16" FontFamily="Bahnschrift"/>
-				<Button x:Name="NextMonthButton" Content="след." HorizontalAlignment="Right" Margin="0,20,24,0" VerticalAlignment="Top" Height="23" Width="57" Background="#FF1F1F1F" Foreground="#FFDDDDDD" BorderBrush="#FF595959" Click="NextMonthButton_Click"/>
+				<Button x:Name="NextMonthButton" Content="bbbb" HorizontalAlignment="Right" Margin="0,20,24,0" VerticalAlignment="Top" Height="23" Width="57" Background="#FF1F1F1F" Foreground="#FFDDDDDD" BorderBrush="#FF595959" Click="NextMonthButton_Click"/>
 				<Border BorderBrush="White" BorderThickness="1" Margin="20,92,10,38"/>
 				<Button x:Name="PastMonthButton" Content="пред." HorizontalAlignment="Right" Margin="0,20,100,0" VerticalAlignment="Top" Height="23" Width="57" Background="#FF1F1F1F" Foreground="#FFDDDDDD" BorderBrush="#FF595959" Click="PastMonthButton_Click"/>
 				<Grid x:Name="WeekdayGrid" Margin="15,63,15,411">
