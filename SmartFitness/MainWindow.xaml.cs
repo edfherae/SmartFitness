@@ -283,7 +283,7 @@ namespace SmartFitness
 		private void Log_in_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			SmartFitnessLogin smart = new SmartFitnessLogin();
-			smart.Show();
+			smart.Show(); 
 		}
 
 		private void LoadCalendar(int month, int year)
