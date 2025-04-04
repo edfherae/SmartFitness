@@ -4,9 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SmartFitness"
-             mc:Ignorable="d" Width="112" Height="66" Foreground="{x:Null}">
+             mc:Ignorable="d" Width="113" Height="65" Foreground="{x:Null}">
     <Grid Margin="0,0,1,0">
         <Label x:Name="DayLabel" Content="00" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Top" Foreground="White" FontFamily="Agency FB" FontWeight="Bold" HorizontalContentAlignment="Right" FontSize="14"/>
-        <Label x:Name="WorkTimeLabel" Content="00:00 - 00:00" HorizontalAlignment="Left" Margin="0,38,0,0" VerticalAlignment="Top" Foreground="#FF484848" Height="21" Width="65" FontFamily="Agency FB" FontSize="11"/>
+        <Label x:Name="WorkTimeLabel" Content="00:00 - 00:00" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Foreground="#FF626161" Height="21" Width="65" FontFamily="Agency FB" FontSize="11"/>
+        <Label x:Name="EventLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="104" FontFamily="Agency FB" FontSize="11" Margin="0,25,0,0">
+            <Label.Foreground>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </Label.Foreground>
+        </Label>
     </Grid>
 </UserControl>
