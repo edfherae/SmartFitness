@@ -9,6 +9,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.IdentityModel.Tokens;
 using SmartFitness.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace SmartFitness
 {
@@ -359,8 +360,24 @@ namespace SmartFitness
 				for (int c = 6; c >= 0; --c)
 				{
 					if (r == 5 & c > weekday) continue;
-					CalendarDay day = new CalendarDay(days + "", "00:00 - 00:00");
-					ScheduleGrid.Children.Add(day);
+                    
+
+				    string _event = "";
+                    using (DbSmartFitness1Context context = new DbSmartFitness1Context())
+                    {
+                        DateOnly _date = DateOnly.FromDateTime(new DateTime(year, month, days));
+                        var selected = context.Schedules
+                            .Where(s => s.Date == _date)
+                            .Select(s => new
+                            {
+                                Time = s.Time,
+                                Group = s.Group
+                            }).FirstOrDefault();
+                        if (selected != null)_event += $"{selected.Time.ToString("HH:mm")} - группа {selected.Group}";
+                        
+                    }
+                    CalendarDay day = new CalendarDay(days + "", c >= 5 ? "09:00 - 20:00" : "09:00 - 22:00", _event);
+                    ScheduleGrid.Children.Add(day);
 					Grid.SetRow(day, r); Grid.SetColumn(day, c);
 					--days;
 					if (days <= 0) return;

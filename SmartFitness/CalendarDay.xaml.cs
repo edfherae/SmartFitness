@@ -17,11 +17,12 @@ namespace SmartFitness
 {
     public partial class CalendarDay : UserControl
     {
-        public CalendarDay(string today, string regime)
+        public CalendarDay(string today, string regime, string evento)
         {
             InitializeComponent();
             DayLabel.Content = today;
             WorkTimeLabel.Content = regime;
+            EventLabel.Content = evento;
         }
     }
 }
